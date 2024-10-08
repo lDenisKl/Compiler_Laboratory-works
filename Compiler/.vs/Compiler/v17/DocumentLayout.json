@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\LexAnal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\HashTable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\HashNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,14 +30,27 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HashNode.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashNode.h",
+              "RelativeDocumentMoniker": "Compiler\\HashNode.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashNode.h",
+              "RelativeToolTip": "Compiler\\HashNode.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T12:24:35.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HashTable.cpp",
-              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.cpp",
-              "RelativeDocumentMoniker": "Compiler\\HashTable.cpp",
-              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.cpp",
-              "RelativeToolTip": "Compiler\\HashTable.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "Title": "HashTable.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.h",
+              "RelativeDocumentMoniker": "Compiler\\HashTable.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.h",
+              "RelativeToolTip": "Compiler\\HashTable.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-19T18:26:09.399Z",
               "EditorCaption": ""
             },
@@ -45,7 +62,7 @@
               "RelativeDocumentMoniker": "Compiler\\LexAnal.cpp",
               "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexAnal.cpp",
               "RelativeToolTip": "Compiler\\LexAnal.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-19T18:19:30.713Z",
               "EditorCaption": ""

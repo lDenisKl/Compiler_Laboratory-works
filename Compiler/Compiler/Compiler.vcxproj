@@ -127,8 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HashTable.cpp" />
+    <ClCompile Include="HashTable.h" />
     <ClCompile Include="LexAnal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HashNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
