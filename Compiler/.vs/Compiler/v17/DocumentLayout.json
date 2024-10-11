@@ -3,16 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexAnal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\LexAnal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\dfa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\dfa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\dfa.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\dfa.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\lexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\lexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexemType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\LexemType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\HashNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexAnal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\LexAnal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\nfa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\nfa.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\nfa.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\nfa.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,39 +58,128 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "HashNode.h",
               "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashNode.h",
               "RelativeDocumentMoniker": "Compiler\\HashNode.h",
               "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashNode.h",
               "RelativeToolTip": "Compiler\\HashNode.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-08T12:24:35.01Z",
+              "WhenOpened": "2024-10-11T07:29:49.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "HashTable.h",
               "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.h",
               "RelativeDocumentMoniker": "Compiler\\HashTable.h",
               "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\HashTable.h",
               "RelativeToolTip": "Compiler\\HashTable.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAFAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAAkAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-19T18:26:09.399Z",
+              "WhenOpened": "2024-10-10T21:06:55.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "dfa.cpp",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\dfa.cpp",
+              "RelativeDocumentMoniker": "Compiler\\dfa.cpp",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\dfa.cpp",
+              "RelativeToolTip": "Compiler\\dfa.cpp",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAACMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-10T20:54:32.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "token.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\token.h",
+              "RelativeDocumentMoniker": "Compiler\\token.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\token.h",
+              "RelativeToolTip": "Compiler\\token.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T20:53:52.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LexemType.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexemType.h",
+              "RelativeDocumentMoniker": "Compiler\\LexemType.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexemType.h",
+              "RelativeToolTip": "Compiler\\LexemType.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T20:53:39.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dfa.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\dfa.h",
+              "RelativeDocumentMoniker": "Compiler\\dfa.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\dfa.h",
+              "RelativeToolTip": "Compiler\\dfa.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T20:41:38.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "lexicalAnalyzer.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\lexicalAnalyzer.h",
+              "RelativeDocumentMoniker": "Compiler\\lexicalAnalyzer.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\lexicalAnalyzer.h",
+              "RelativeToolTip": "Compiler\\lexicalAnalyzer.h",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAAAIcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T19:46:25.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "nfa.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\nfa.h",
+              "RelativeDocumentMoniker": "Compiler\\nfa.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\nfa.h",
+              "RelativeToolTip": "Compiler\\nfa.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T14:16:09.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "nfa.cpp",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\nfa.cpp",
+              "RelativeDocumentMoniker": "Compiler\\nfa.cpp",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\nfa.cpp",
+              "RelativeToolTip": "Compiler\\nfa.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-10T14:16:04.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "LexAnal.cpp",
               "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexAnal.cpp",
               "RelativeDocumentMoniker": "Compiler\\LexAnal.cpp",
               "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexAnal.cpp",
               "RelativeToolTip": "Compiler\\LexAnal.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-19T18:19:30.713Z",
               "EditorCaption": ""

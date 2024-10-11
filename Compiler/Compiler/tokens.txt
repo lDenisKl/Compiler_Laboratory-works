@@ -1,0 +1,20 @@
+213 | CONST | 0 
+i | ID | 5 
+valuesdsdfsdfsd | ID | 6 
+; | SEP | 9 
+= | OP | 11 
+<= | OP | 21 
+== | OP | 22 
+{ | SEP | 23 
+} | SEP | 25 
+for | KW | 27 
+int | KW | 31 
+intf | ID | 33 
+( | SEP | 40 
+value | ID | 41 
+) | SEP | 42 
++ | OP | 43 
+a | ID | 47 
+b | ID | 48 
+1 | CONST | 49 
+

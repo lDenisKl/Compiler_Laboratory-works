@@ -1,36 +1,23 @@
+#include "lexicalAnalyzer.h"
 #include <fstream>
-#include <iostream>
-#include <string>
-#include <vector>
-#include "HashTable.h"
-
-using namespace std;
-//
-//int main() {
-//	ofstream fout("tokens.txt");
-//	ifstream fin("sourceCode.txt");
-//	string code;
-//	string line;
-//	while (getline(fin, line))
-//	{
-//		code += line + '\n';
-//	}
-//	// -----
-//	vector<int> tokens;
-//	fout << tokens[0];
-//}
-
 
 int main()
-{
-	HashTable<string, string>* h = new HashTable<string, string>;
-	h->insertNode("int", "type | 1");
-	h->insertNode("dbl", "err | 2 ");
-	h->insertNode("float", "type | 3");
-	h->display();
-	cout << h->getSize() << endl;
-	cout << h->deleteNode("dbl") << endl;
-	cout << h->getSize() << endl;
-	cout << h->isEmpty() << endl;
-	cout << h->get("float");
+{	
+	std::ofstream fout("tokens.txt");
+	std::ifstream fin("sourceCode.txt");
+	std::string line;
+	std::string code;
+	while (getline(fin, line)) {
+		code +=line + ' ';
+	}
+	lexicalAnalyzer lA;
+	HashTable<std::string, token>* h = new HashTable<std::string, token>;
+	std::vector<std::string> wl;
+	lA.process(h,wl,code);
+	std::string g = h->display();
+	fout << g;
+	fout << '\n';
+	for (auto x : wl) {
+		fout << x<< " | MISTAKE\n";
+	}
 }

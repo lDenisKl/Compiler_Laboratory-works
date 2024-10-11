@@ -21,9 +21,30 @@
     <ClCompile Include="HashTable.h">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="nfa.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="dfa.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HashNode.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="nfa.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="dfa.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="lexicalAnalyzer.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="token.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LexemType.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

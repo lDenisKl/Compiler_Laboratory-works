@@ -127,11 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dfa.cpp" />
     <ClCompile Include="HashTable.h" />
     <ClCompile Include="LexAnal.cpp" />
+    <ClCompile Include="nfa.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dfa.h" />
     <ClInclude Include="HashNode.h" />
+    <ClInclude Include="LexemType.h" />
+    <ClInclude Include="lexicalAnalyzer.h" />
+    <ClInclude Include="nfa.h" />
+    <ClInclude Include="token.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

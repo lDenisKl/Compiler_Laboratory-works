@@ -1,7 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 #include "HashNode.h"
+#include "token.h"
 
 template <typename K, typename V>
 class HashTable {
@@ -20,14 +22,19 @@ public:
         for (int i = 0; i < capacity; i++)
             table[i] = NULL;
 
-        bufferForDeletingNode = new HashNode<K, V>("-1", "-1");
+        bufferForDeletingNode = new HashNode<K, V>("-1", token(),0);
     }
 
-    int hashCode(K key) { return key.size() % capacity; }
+    int hashCode(K key) { 
+        long sum = 0;
+        for (int i = 0; i < key.size(); ++i) {
+            sum += (int)key[i];
+        }
+        return sum % capacity; 
+    }
 
     void insertNode(K key, V value)
     {
-        HashNode<K, V>* node = new HashNode<K, V>(key, value);
 
         int hashIndex = hashCode(key);
 
@@ -38,6 +45,8 @@ public:
         if (table[hashIndex] == NULL || table[hashIndex]->key == "-1") {
             size++;
         }
+
+        HashNode<K, V>* node = new HashNode<K, V>(key, value,hashIndex);
         table[hashIndex] = node;
     }
 
@@ -83,14 +92,36 @@ public:
     bool isEmpty() { return size == 0; }
 
 
-    void display()
+    std::string display()
     {
+        std::string answer = "";
         for (int i = 0; i < capacity; i++) {
-            if (table[i] != NULL && table[i]->key != "-1")
-                std::cout << "key = " << table[i]->key
-                << "  value = " << table[i]->value
-                << '\n';
+            if (table[i] != NULL && table[i]->key != "-1") {
+                answer += table[i]->key;
+                LexemType lt = (table[i]->value).type;
+                std::string type = "";
+                switch (lt) {
+                case LexemType::OPERATOR: 
+                    type = "OP";  
+                    break;
+                case LexemType::KEYWORD: 
+                    type = "KW";  
+                    break;
+                case LexemType::CONST: 
+                    type = "CONST";  
+                    break;
+                case LexemType::ID: 
+                    type = "ID";  
+                    break;
+                case LexemType::SEPARATOR:
+                    type = "SEP"; 
+                    break;
+                }
+                std::string in = std::to_string(table[i]->pos);
+                answer += (" | " + type + " | "+ in + " \n");
+            }
         }
+        return answer;
     }
 };
 
