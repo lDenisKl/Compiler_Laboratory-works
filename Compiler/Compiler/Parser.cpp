@@ -1,4 +1,4 @@
-#include "Parser.h"
+﻿#include "Parser.h"
 
 bool Parser::isNumber(string s)
 {
@@ -21,230 +21,402 @@ bool Parser::isNumber(string s)
 	}
 	return (state == 1 || state == 3 || state == 4);
 }
+bool Parser::isName(string s)
+{
+	if(s == "freq" || s == "func")
+		return true;
+	return false;
+}
 
 void Parser::getLexeme()
 {
-	if (i >= input.length())
+	if (i >= ls.size())
 	{
 		lexeme = "#";
 		return;
 	}
-	lexeme = "";
-	if (input[i] == '+' || input[i] == '-' ||
-		input[i] == '*' || input[i] == '/' ||
-		input[i] == '^' || input[i] == '(' ||
-		input[i] == ')')
-	{
-		lexeme += input[i];
-		i++;
-	}
-	else
-	{
-		while (i < input.length() &&
-			!(input[i] == '+' || input[i] == '-' ||
-				input[i] == '*' || input[i] == '/' ||
-				input[i] == '^' || input[i] == '(' ||
-				input[i] == ')'))
-		{
-			lexeme += input[i];
-			i++;
-		}
-	}
+	lexeme = ls[i];
+	i++;
+	
 }
 
-void Parser::S(Node& n)
-{
-	if (isNumber(lexeme) || lexeme == "x" ||
-		lexeme == "(" || lexeme == "sin" ||
-		lexeme == "cos" || lexeme == "exp" ||
-		lexeme == "log")
-	{
-		// S -> TS1
-		n.addSon("T");
-		T(n.getSon(0));
-		n.addSon("S1");
-		S1(n.getSon(1));
-	}
-	else throw exception("Wrong input");
+void mistake(string msg) {
+	cout << msg << '\n';
 }
 
-void Parser::S1(Node& n)
-{
+void Parser::Function(Node& n) {
+	if (lexeme == "int")
+	{
+		// Function → Begin Descriptions Operators End
+		n.addSon("Begin");
+		Begin(n.getSon(0));
+		n.addSon("Descriptions");
+		Descriptions(n.getSon(1));
+		n.addSon("Operators");
+		Operators(n.getSon(2));
+		n.addSon("End");
+		End(n.getSon(3));
+	}
+	else mistake("'int' expected");
+}
+
+
+
+void Parser::Begin(Node& n) {
+	if (lexeme == "int")
+	{
+		// Begin → Type FunctionName ( ) {
+		n.addSon("Type");
+		Type(n.getSon(0));
+		n.addSon("FunctionName");
+		FunctionName(n.getSon(1));
+		n.addSon("(");
+		getLexeme();
+		n.addSon(")");
+		getLexeme();
+		n.addSon("{");
+		getLexeme();
+	}
+	else mistake("'int' expected");
+}
+
+
+void Parser::End(Node& n) {
+	if (lexeme == "return")
+	{
+		// End → return Id ; }
+		n.addSon("return");
+		getLexeme();
+		n.addSon("Id");
+		Id(n.getSon(1));
+		n.addSon(";");
+		getLexeme();
+		n.addSon("}");
+		getLexeme();
+	}
+	else mistake("'return' expected");
+}
+
+
+void Parser::FunctionName(Node& n) {
+	if (isName(lexeme))
+	{
+		// FunctionName → Id
+		n.addSon("Id");
+		Id(n.getSon(0));
+	}
+	else mistake("func name expected");
+}
+
+void Parser::Descriptions(Node& n) {
+	if (lexeme == "int")
+	{
+		// Descriptions → Descr Descriptions1
+		n.addSon("Descr");
+		Descr(n.getSon(0));
+		n.addSon("Descriptions1");
+		Descriptions1(n.getSon(1));
+	}
+	else mistake("'int' expected");
+}
+
+void Parser::Descriptions1(Node& n) {
+	if (lexeme == "int")
+	{
+		// Descriptions1 → Descriptions
+		n.addSon("Descriptions");
+		Descriptions1(n.getSon(0));
+	}
+	else if (lexeme == "for" || isName(lexeme))
+	{
+		//Descriptions1 → eps
+		n.addSon("eps");
+	}
+	else mistake("'int' or 'for' or id_name expected");
+}
+
+void Parser::Descr(Node& n) {
+	if (lexeme == "int")
+	{
+		// Descr → Type VarList ;
+		n.addSon("Type");
+		Type(n.getSon(0));
+		n.addSon("VarList");
+		VarList(n.getSon(1));
+		n.addSon(";");
+		getLexeme();
+	}
+	else mistake("'int' expected");
+}
+
+void Parser::VarList(Node& n) {
+	if (isName(lexeme))
+	{
+		// VarList → Id VarList1
+		n.addSon("Id");
+		Id(n.getSon(0));
+		n.addSon("VarList1");
+		VarList1(n.getSon(1));
+	}
+	else mistake("id_name expected");
+}
+
+void Parser::VarList1(Node& n) {
+	if (lexeme == ",")
+	{
+		// VarList1 → , VarList
+		n.addSon(",");
+		getLexeme();
+		n.addSon("VarList");
+		VarList(n.getSon(1));
+	}
+	else if (lexeme == ";") {
+		//VarList1 → eps
+		n.addSon("eps");
+	}
+	else mistake("',' or ';' expected");
+}
+
+void Parser::Type(Node& n) {
+	if (lexeme == "int")
+	{
+		// Type → int
+		n.addSon("int");
+		getLexeme();
+	}
+	else mistake("'int' expected");
+}
+
+void Parser::Operators(Node& n) {
+	if (lexeme == "for" || isName(lexeme))
+	{
+		// Operators → Op Operators'
+		n.addSon("Op");
+		Op(n.getSon(0));
+		n.addSon("Operators1");
+		Operators1(n.getSon(1));
+	}
+	else mistake("id_name or 'for' expected");
+}
+
+void Parser::Operators1(Node & n) {
+	if (isName(lexeme) || lexeme == "for")
+	{
+		// Operators1 → Operators
+		n.addSon("Operators");
+		Operators(n.getSon(0));
+	}
+	else if (lexeme == "}" || lexeme == "return") {
+		//Operators1 → eps
+		n.addSon("eps");
+	}
+	else mistake("id_name or '}' or 'return' expected");
+}
+
+void Parser::Op(Node& n) {
+	if (lexeme == "for")
+	{
+		// Op → for ( Id = Expr ; Condition ; Expr ) { Operators }
+		n.addSon("for");
+		getLexeme();
+		n.addSon("(");
+		getLexeme();
+		n.addSon("Id");
+		Id(n.getSon(2));
+		n.addSon("=");
+		getLexeme();
+		n.addSon("Expr");
+		Expr(n.getSon(4));
+		n.addSon(";");
+		getLexeme();
+
+
+		n.addSon("Condition");
+		Condition(n.getSon(6));
+		n.addSon(";");
+		getLexeme();
+
+		n.addSon("Expr");
+		Expr(n.getSon(8));
+		n.addSon(")");
+		getLexeme();
+
+
+		n.addSon("{");
+		getLexeme();
+		n.addSon("Operators");
+		Operators(n.getSon(11));
+		n.addSon("}");
+		getLexeme();
+	}
+	else if (isName(lexeme) ) {
+		// Op -> Id = Expr ; 
+		n.addSon("Id");
+		Id(n.getSon(0));
+		n.addSon("=");
+		getLexeme();
+		n.addSon("Expr");
+		Expr(n.getSon(2));
+		n.addSon(";");
+		getLexeme();
+	}
+	else mistake("'for' or id_name expected");
+}
+
+void Parser::Expr(Node& n) {
+	if (isName(lexeme) || isNumber(lexeme) || lexeme == "(")
+	{
+		// Expr → SimpleExpr Expr1
+		n.addSon("SimpleExpr");
+		SimpleExpr(n.getSon(0));
+		n.addSon("Expr1");
+		Expr1(n.getSon(1));
+	}
+	else mistake("id_name or int_num or '(' expected");
+}
+
+void Parser::Expr1(Node& n) {
 	if (lexeme == "+")
 	{
-		// S1 -> +TS1
+		// Expr1 → + Expr
 		n.addSon("+");
 		getLexeme();
-		n.addSon("T");
-		T(n.getSon(1));
-		n.addSon("S1");
-		S1(n.getSon(2));
+		n.addSon("Expr");
+		Expr(n.getSon(1));
 	}
 	else if (lexeme == "-")
 	{
-		// S1 -> -TS1
+		// Expr1 → - Expr
 		n.addSon("-");
 		getLexeme();
-		n.addSon("T");
-		T(n.getSon(1));
-		n.addSon("S1");
-		S1(n.getSon(2));
+		n.addSon("Expr");
+		Expr(n.getSon(1));
 	}
-	else if (lexeme == ")" || lexeme == "#")
-	{
-		// S1 -> eps;
+	else if (lexeme == ";" || lexeme == ")" ||
+		lexeme == "<=" || lexeme == ">=" || 
+		lexeme == "==" || lexeme == "!=" || 
+		lexeme == "<" || lexeme == ">") {
+		//Expr1 → eps
 		n.addSon("eps");
 	}
-	else throw exception("Wrong input");
+	else mistake("';' or ')' or '+' or '-' or RelOp expected");
 }
 
-void Parser::T(Node& n)
-{
-	if (isNumber(lexeme) || lexeme == "x" ||
-		lexeme == "(" || lexeme == "sin" ||
-		lexeme == "cos" || lexeme == "exp" ||
-		lexeme == "log")
-	{
-		// T -> FT1
-		n.addSon("F");
-		F(n.getSon(0));
-		n.addSon("T1");
-		T1(n.getSon(1));
-	}
-	else throw exception("Wrong input");
-}
 
-void Parser::T1(Node& n)
-{
-	if (lexeme == "*")
+void Parser::SimpleExpr(Node& n) {
+	if (lexeme == "(")
 	{
-		// T1 -> *FT1
-		n.addSon("*");
-		getLexeme();
-		n.addSon("F");
-		F(n.getSon(1));
-		n.addSon("T1");
-		T1(n.getSon(2));
-	}
-	else if (lexeme == "/")
-	{
-		// T1 -> /FT1
-		n.addSon("/");
-		getLexeme();
-		n.addSon("F");
-		F(n.getSon(1));
-		n.addSon("T1");
-		T1(n.getSon(2));
-	}
-	else if (lexeme == ")" || lexeme == "#" ||
-		lexeme == "+" || lexeme == "-")
-	{
-		// T1 -> eps;
-		n.addSon("eps");
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::F(Node& n)
-{
-	if (isNumber(lexeme) || lexeme == "x" ||
-		lexeme == "(" || lexeme == "sin" ||
-		lexeme == "cos" || lexeme == "exp" ||
-		lexeme == "log")
-	{
-		// F -> AF1
-		n.addSon("A");
-		A(n.getSon(0));
-		n.addSon("F1");
-		F1(n.getSon(1));
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::F1(Node& n)
-{
-	if (lexeme == "^")
-	{
-		// F1 -> ^AF1
-		n.addSon("^");
-		getLexeme();
-		n.addSon("A");
-		A(n.getSon(1));
-		n.addSon("F1");
-		F1(n.getSon(2));
-	}
-	else if (lexeme == "+" || lexeme == "-" ||
-		lexeme == "*" || lexeme == "/" ||
-		lexeme == ")" || lexeme == "#")
-	{
-		// F1 -> eps;
-		n.addSon("eps");
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::A(Node& n)
-{
-	if (isNumber(lexeme))
-	{
-		// A -> num
-		n.addSon(lexeme);
-		getLexeme();
-	}
-	else if (lexeme == "x")
-	{
-		// A -> x
-		n.addSon("x");
-		getLexeme();
-	}
-	else if (lexeme == "(")
-	{
+		// SimpleExpr → ( Expr )
 		n.addSon("(");
 		getLexeme();
-		n.addSon("S");
-		S(n.getSon(1));
-		if (lexeme == ")")
-		{
-			n.addSon(")");
-			getLexeme();
-		}
-		else throw exception("Wrong input");
-	}
-	else if (lexeme == "sin" || lexeme == "cos" ||
-		lexeme == "log" || lexeme == "exp")
-	{
-		// A -> f(S)
-		n.addSon(lexeme);
+		n.addSon("Expr");
+		Expr(n.getSon(1));
+		n.addSon(")");
 		getLexeme();
-		if (lexeme == "(")
-		{
-			n.addSon("(");
-			getLexeme();
-			n.addSon("S");
-			S(n.getSon(2));
-			if (lexeme == ")")
-			{
-				n.addSon(")");
-				getLexeme();
-			}
-			else throw exception("Wrong input");
-		}
-		else throw exception("Wrong input");
 	}
-	else throw exception("Wrong input");
+	else if (isName(lexeme))
+	{
+		// SimpleExpr → Id
+		n.addSon("Id");
+		Id(n.getSon(0));
+	}
+	else if (isNumber(lexeme))
+	{
+		// SimpleExpr → Const
+		n.addSon("Const");
+		Const(n.getSon(0));
+	}
+	else mistake("'(' or Name or Const expected");
 }
 
-Parser::Parser(string inp)
+void Parser::Condition(Node& n) {
+	if (lexeme == "(")
+	{
+		// Condition → Expr RelationOperations Expr
+		n.addSon("Expr");
+		Expr(n.getSon(0));
+		n.addSon("RelationOperations");
+		RelationOperations(n.getSon(1));
+		n.addSon("Expr");
+		Expr(n.getSon(2));
+	}
+	else mistake("'(' expected");
+}
+
+
+void Parser::RelationOperations(Node& n) {
+	if (lexeme == "<=")
+	{
+		// RelationOperations → <=
+		n.addSon("<=");
+		getLexeme();
+	}
+	else if (lexeme == ">=")
+	{
+		// RelationOperations → >=
+		n.addSon(">=");
+		getLexeme();
+	}
+	else if (lexeme == ">")
+	{
+		// RelationOperations → >
+		n.addSon(">");
+		getLexeme();
+	}
+	else if (lexeme == "<")
+	{
+		// RelationOperations → <
+		n.addSon("<");
+		getLexeme();
+	}
+	else if (lexeme == "==")
+	{
+		// RelationOperations → ==
+		n.addSon("==");
+		getLexeme();
+	}
+	else if (lexeme == "!=")
+	{
+		// RelationOperations → !=
+		n.addSon("!=");
+		getLexeme();
+	}
+	else mistake("'RelOp expected");
+}
+
+
+void Parser::Id(Node& n) {
+	if (isName(lexeme))
+	{
+		// Id -> id_name
+		n.addSon(lexeme);
+		getLexeme();
+	}
+	else mistake("name expected");
+}
+
+
+void Parser::Const(Node& n) {
+	if (isNumber(lexeme))
+	{
+		// Const -> int_num
+		n.addSon(lexeme);
+		getLexeme();
+	}
+	else mistake("const expected");
+}
+
+Parser::Parser(std::vector<std::string> lss)
 {
-	input = inp;
+	ls = lss;
 	i = 0;
 }
 
 Node Parser::parse()
 {
-	Node root("S");
+	Node root("Function");
 	getLexeme();
-	S(root);
+	Function(root);
 	if (lexeme != "#")
 		throw exception("Wrong input");
 	return root;

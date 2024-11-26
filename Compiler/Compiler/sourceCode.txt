@@ -1,6 +1,11 @@
-i
-int valuesdsdfsdfsd = 213 ;
-for ( int i = 1 ; i <= value ; i = i + 1 ) {
-int a == b ;
+int hashToken ( ) {
+int h ;
+h = ( 1 ) ;    
+if ( 1 == 1 ) {
+h = ( 1 ) ;
+} 
+else {
+h = ( 1 ) ;
 }
-intf
+return h ; 
+}
