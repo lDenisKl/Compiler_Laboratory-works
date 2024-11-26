@@ -1,5 +1,9 @@
 #include "lexicalAnalyzer.h"
 #include <fstream>
+#include <vector>
+#include <string>
+
+using namespace std;
 
 int main()
 {	
@@ -13,7 +17,8 @@ int main()
 	lexicalAnalyzer lA;
 	HashTable<std::string, token>* h = new HashTable<std::string, token>;
 	std::vector<std::string> wl;
-	lA.process(h,wl,code);
+	std::vector<std::string> lexems;
+	lA.process(h,wl,code,lexems);
 	std::string g = h->display();
 	fout << g;
 	fout << '\n';

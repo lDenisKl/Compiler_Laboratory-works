@@ -4,6 +4,7 @@
 #include "dfa.h"
 #include "nfa.h"
 #include <vector>
+#include <string>
 
 class lexicalAnalyzer
 {
@@ -16,7 +17,7 @@ private:
 	long charpos(std::string str1, char c);
 public:
 	lexicalAnalyzer();
-	void  process(HashTable<std::string, token>*& hash, std::vector<std::string>& wrongLexems, std::string source);
+	void  process(HashTable<std::string, token>*& hash, std::vector<std::string>& wrongLexems, std::string sourc1e, std::vector<std::string>& ls);
 };
 
 
@@ -146,7 +147,7 @@ token lexicalAnalyzer::next() {
 	return t;
 }
 
-void lexicalAnalyzer::process(HashTable<std::string,token>*& hash,std::vector<std::string>& wrongLexems, std::string sourc1e) {
+void lexicalAnalyzer::process(HashTable<std::string,token>*& hash,std::vector<std::string>& wrongLexems, std::string sourc1e, std::vector<std::string>& ls) {
 	source = sourc1e;
 	while (currentPos != source.size()) {
 		token t = next();
@@ -155,6 +156,8 @@ void lexicalAnalyzer::process(HashTable<std::string,token>*& hash,std::vector<st
 		}
 		else{
 			hash->insertNode(t.lexem, t);
+			ls.push_back(t.lexem);
+
 		}
 	}
 
