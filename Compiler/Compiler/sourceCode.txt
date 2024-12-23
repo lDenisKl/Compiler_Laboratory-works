@@ -1,11 +1,5 @@
-int hashToken ( ) {
-int h ;
-h = ( 1 ) ;    
-if ( 1 == 1 ) {
-h = ( 1 ) ;
-} 
-else {
-h = ( 1 ) ;
-}
-return h ; 
+int funcname ( ) {
+int a , b ;
+a = 5 ;
+return b ;
 }

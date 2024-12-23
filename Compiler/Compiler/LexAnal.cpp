@@ -19,7 +19,7 @@ int main()
 	lexicalAnalyzer lA;
 	HashTable<std::string, token>* h = new HashTable<std::string, token>;
 	std::vector<std::string> wrongLexems;
-	std::vector<std::string> lexems;
+	std::vector<token> lexems;
 	lA.process(h,wrongLexems,code,lexems);
 	std::string g = h->display();
 	fout << g;
@@ -30,5 +30,7 @@ int main()
 
 	Parser p(lexems);
 	Node root = p.parse();
-	root.print(0);
+	cout << root.tr;
+	//root.print(0);
+
 }

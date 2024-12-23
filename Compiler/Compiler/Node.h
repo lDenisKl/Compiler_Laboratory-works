@@ -15,5 +15,7 @@ public:
 	Node& getSon(int i);
 	void print(int lvl);
 	double evaluate(double x);
+	string tr="";
+	int count=1;
 };
 

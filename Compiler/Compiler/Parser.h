@@ -1,13 +1,16 @@
 #pragma once
 #include "Node.h"
+#include "token.h"
 #include <iostream>
 #include <string>
+#include <set>
 using namespace std;
 class Parser
 {
 private:
 	string lexeme;
-	vector<string> ls; // список лексем по порядку
+	set<string> variables;
+	vector<token> ls;
 	int i;
 	bool isNumber(string s);
 	bool isName(string s);
@@ -34,7 +37,7 @@ private:
 	void Const(Node& n);
 
 public:
-	Parser(vector<string> ls);
+	Parser(vector<token> ls);
 	Node parse();
 };
 

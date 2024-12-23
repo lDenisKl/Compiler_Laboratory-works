@@ -17,7 +17,7 @@ private:
 	long charpos(std::string str1, char c);
 public:
 	lexicalAnalyzer();
-	void  process(HashTable<std::string, token>*& hash, std::vector<std::string>& wrongLexems, std::string sourc1e, std::vector<std::string>& ls);
+	void  process(HashTable<std::string, token>*& hash, std::vector<std::string>& wrongLexems, std::string sourc1e, std::vector<token>& ls);
 };
 
 
@@ -147,7 +147,7 @@ token lexicalAnalyzer::next() {
 	return t;
 }
 
-void lexicalAnalyzer::process(HashTable<std::string,token>*& hash,std::vector<std::string>& wrongLexems, std::string sourc1e, std::vector<std::string>& ls) {
+void lexicalAnalyzer::process(HashTable<std::string,token>*& hash,std::vector<std::string>& wrongLexems, std::string sourc1e, std::vector<token>& ls) {
 	source = sourc1e;
 	while (currentPos != source.size()) {
 		token t = next();
@@ -156,7 +156,7 @@ void lexicalAnalyzer::process(HashTable<std::string,token>*& hash,std::vector<st
 		}
 		else{
 			hash->insertNode(t.lexem, t);
-			ls.push_back(t.lexem);
+			ls.push_back(t);
 
 		}
 	}
