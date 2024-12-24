@@ -57,7 +57,7 @@ void Parser::Function(Node& n) {
 		Operators(n.getSon(2));
 		n.addSon("End");
 		End(n.getSon(3));
-		n.tr = n.getSon(0).tr + " " + n.getSon(1).tr+" "+ n.getSon(2).tr + " " + n.getSon(3).tr;
+		n.tr += n.getSon(0).tr + "\n" + n.getSon(1).tr+"\n"+ n.getSon(2).tr + "\n" + n.getSon(3).tr+'\n';
 	}
 	else mistake("'int' expected");
 }
@@ -93,7 +93,7 @@ void Parser::Begin(Node& n) {
 		else {
 			mistake("'{' excepted");
 		}
-		n.tr = n.getSon(1).tr + " CALL";
+		n.tr += n.getSon(0).tr + " " + n.getSon(1).tr + " DECL";
 	}
 	else mistake("'int' expected");
 }
@@ -121,7 +121,7 @@ void Parser::End(Node& n) {
 		else {
 			mistake("'}' expected");
 		}
-		n.tr = n.getSon(1).tr + " RETURN";
+		n.tr += n.getSon(1).tr + " RETURN";
 	}
 	else mistake("'return' expected");
 }
@@ -132,8 +132,8 @@ void Parser::FunctionName(Node& n) {
 	{
 		// FunctionName → Id
 		n.addSon("Id");
-		Id(n.getSon(0)); 
-		n.tr = n.getSon(0).tr;
+		Id(n.getSon(0),true); 
+		n.tr += n.getSon(0).tr;
 	}
 	else mistake("func name expected");
 }
@@ -146,7 +146,7 @@ void Parser::Descriptions(Node& n) {
 		Descr(n.getSon(0));
 		n.addSon("Descriptions1");
 		Descriptions1(n.getSon(1));
-		n.tr = n.getSon(0).tr + " " + n.getSon(1).tr;
+		n.tr += n.getSon(0).tr + " " + n.getSon(1).tr;
 	}
 	else mistake("'int' expected");
 }
@@ -156,8 +156,8 @@ void Parser::Descriptions1(Node& n) {
 	{
 		// Descriptions1 → Descriptions
 		n.addSon("Descriptions");
-		Descriptions1(n.getSon(0));
-		n.tr = n.getSon(0).tr;
+		Descriptions(n.getSon(0));
+		n.tr += n.getSon(0).tr;
 	}
 	else if (lexeme == "for" || isName(lexeme))
 	{
@@ -182,8 +182,10 @@ void Parser::Descr(Node& n) {
 		else {
 			mistake("';' expected");
 		}
-		n.tr = n.getSon(0).tr + " " + n.getSon(1).tr+ to_string(n.getSon(1).count) + " DECL";
-
+		if(n.getSon(1).count!=1)
+			n.tr += n.getSon(0).tr + " " + n.getSon(1).tr+ to_string(n.getSon(1).count+1) + " DECL";
+		else
+			n.tr += n.getSon(0).tr + " " + n.getSon(1).tr +" DECL";
 	}
 	else mistake("'int' expected");
 }
@@ -193,11 +195,12 @@ void Parser::VarList(Node& n) {
 	{
 		// VarList → Id VarList1
 		n.addSon("Id");
-		Id(n.getSon(0));
+		Id(n.getSon(0),true);
 		n.addSon("VarList1");
 		VarList1(n.getSon(1));
-		n.tr = n.getSon(0).tr + " " + n.getSon(1).tr;
-		n.count = n.getSon(1).count + 1;
+
+		n.count += n.getSon(1).count;
+		n.tr += n.getSon(0).tr + " " + n.getSon(1).tr;
 	}
 	else mistake("id_name expected");
 }
@@ -212,12 +215,14 @@ void Parser::VarList1(Node& n) {
 		n.addSon("VarList");
 		VarList(n.getSon(1));
 
-		n.tr = " " + n.getSon(1).tr;
 		n.count = n.getSon(1).count;
+		n.tr += n.getSon(1).tr;
+
 	}
 	else if (lexeme == ";") {
 		//VarList1 → eps
 		n.addSon("eps");
+		n.count = 0;
 	}
 	else mistake("',' or ';' expected");
 }
@@ -227,9 +232,9 @@ void Parser::Type(Node& n) {
 	{
 		// Type → int
 		n.addSon("int");
-		n.getSon(0).tr = lexeme;
+		n.getSon(0).tr += lexeme;
 		getLexeme();
-		n.tr = n.getSon(0).tr;
+		n.tr += n.getSon(0).tr;
 	}
 	else mistake("'int' expected");
 }
@@ -242,7 +247,7 @@ void Parser::Operators(Node& n) {
 		Op(n.getSon(0));
 		n.addSon("Operators1");
 		Operators1(n.getSon(1));
-		n.tr = n.getSon(0).tr + " " + n.getSon(1).tr;
+		n.tr += n.getSon(0).tr + " " + n.getSon(1).tr;
 	}
 	else mistake("id_name or 'for' expected");
 }
@@ -253,7 +258,7 @@ void Parser::Operators1(Node & n) {
 		// Operators1 → Operators
 		n.addSon("Operators");
 		Operators(n.getSon(0));
-		n.tr = n.getSon(0).tr;
+		n.tr += n.getSon(0).tr;
 	}
 	else if (lexeme == "}" || lexeme == "return") {
 		//Operators1 → eps
@@ -339,8 +344,20 @@ void Parser::Op(Node& n) {
 		else {
 			mistake("'}' expected");
 		}
+		// BF - если ложь
+		// DEFL - объявление метки
+		// BRL - переход в метке
+		n.tr += n.getSon(2).tr + " " + n.getSon(4).tr + "=";
+		n.tr += " m"+to_string(metkaCurrent) + " DEFL ";
+		n.tr += n.getSon(6).tr;
+		n.tr += " m" + to_string(metkaCurrent+1)+" BF ";
+		n.tr += n.getSon(11).tr;
+		n.tr += n.getSon(8).tr;
+		n.tr += "m" + to_string(metkaCurrent) + " BRL";
+		n.tr += " m" + to_string(metkaCurrent+1) + " DEFL";
+		metkaCurrent += 2;
 
-		// n.tr = lexeme; ????
+
 	}
 	else if (isName(lexeme) ) {
 		// Op -> Id = Expr ; 
@@ -392,7 +409,7 @@ void Parser::Expr1(Node& n) {
 		getLexeme();
 		n.addSon("Expr");
 		Expr(n.getSon(1));
-		n.tr = n.getSon(1).tr + " " + n.getSon(0).tr;
+		n.tr = n.getSon(1).tr + n.getSon(0).tr + " ";
 	
 	}
 	else if (lexeme == "-")
@@ -403,7 +420,7 @@ void Parser::Expr1(Node& n) {
 		getLexeme();
 		n.addSon("Expr");
 		Expr(n.getSon(1)); 
-		n.tr = n.getSon(1).tr + " " + n.getSon(0).tr;
+		n.tr = n.getSon(1).tr + n.getSon(0).tr + " ";
 	}
 	else if (lexeme == ";" || lexeme == ")" ||
 		lexeme == "<=" || lexeme == ">=" || 
@@ -421,27 +438,25 @@ void Parser::SimpleExpr(Node& n) {
 	{
 		// SimpleExpr → ( Expr )
 		n.addSon("(");
-		n.getSon(0).tr = "(";
 		getLexeme();
 		n.addSon("Expr");
 		Expr(n.getSon(1));
 		if (lexeme == ")") {
 			n.addSon(")");
-			n.getSon(2).tr = ")";
 			getLexeme();
 		}
 		else {
 			mistake("')' expected");
 		}
 
-		n.tr = n.getSon(1).tr+" ";
+		n.tr += n.getSon(1).tr+" ";
 	}
 	else if (isName(lexeme))
 	{
 		// SimpleExpr → Id
 		n.addSon("Id");
 		Id(n.getSon(0));
-		n.tr = n.getSon(0).tr;
+		n.tr += n.getSon(0).tr;
 
 	}
 	else if (isNumber(lexeme))
@@ -449,7 +464,7 @@ void Parser::SimpleExpr(Node& n) {
 		// SimpleExpr → Const
 		n.addSon("Const");
 		Const(n.getSon(0)); 
-		n.tr = n.getSon(0).tr;
+		n.tr += n.getSon(0).tr;
 	}
 	else mistake("'(' or Name or Const expected");
 }
@@ -465,7 +480,7 @@ void Parser::Condition(Node& n) {
 		n.addSon("Expr");
 		Expr(n.getSon(2));
 
-		n.tr = n.getSon(0).tr + " " + n.getSon(2).tr + " " + n.getSon(1).tr;
+		n.tr += n.getSon(0).tr  + n.getSon(2).tr + n.getSon(1).tr;
 	}
 	else mistake("'(' expected");
 }
@@ -477,6 +492,7 @@ void Parser::RelationOperations(Node& n) {
 		// RelationOperations → <=
 		n.addSon("<=");
 		n.getSon(0).tr = lexeme;
+		n.tr = lexeme;
 		getLexeme();
 	}
 	else if (lexeme == ">=")
@@ -484,6 +500,7 @@ void Parser::RelationOperations(Node& n) {
 		// RelationOperations → >=
 		n.addSon(">=");
 		n.getSon(0).tr = lexeme;
+		n.tr = lexeme;
 		getLexeme();
 	}
 	else if (lexeme == ">")
@@ -491,6 +508,7 @@ void Parser::RelationOperations(Node& n) {
 		// RelationOperations → >
 		n.addSon(">");
 		n.getSon(0).tr = lexeme;
+		n.tr = lexeme;
 		getLexeme();
 	}
 	else if (lexeme == "<")
@@ -498,6 +516,7 @@ void Parser::RelationOperations(Node& n) {
 		// RelationOperations → <
 		n.addSon("<");
 		n.getSon(0).tr = lexeme;
+		n.tr = lexeme;
 		getLexeme();
 	}
 	else if (lexeme == "==")
@@ -505,6 +524,7 @@ void Parser::RelationOperations(Node& n) {
 		// RelationOperations → ==
 		n.addSon("==");
 		n.getSon(0).tr = lexeme;
+		n.tr = lexeme;
 		getLexeme();
 	}
 	else if (lexeme == "!=")
@@ -512,24 +532,37 @@ void Parser::RelationOperations(Node& n) {
 		// RelationOperations → !=
 		n.addSon("!=");
 		n.getSon(0).tr = lexeme;
+		n.tr = lexeme;
 		getLexeme();
 	}
 	else mistake("'RelOp expected");
 }
 
 
-void Parser::Id(Node& n) {
+void Parser::Id(Node& n, bool isFromDeclaration) {
 	if (isName(lexeme))
 	{
 		// Id -> id_name
 		bool isAlreadyDeclared = variables.find(lexeme) != variables.end();
-		if (!isAlreadyDeclared) {
+		if (isFromDeclaration == false) {
+			if (isAlreadyDeclared == false) {
+				mistake("not declared : " + lexeme);
+			}
+
 			n.addSon(lexeme);
 			n.getSon(0).tr = lexeme;
 			getLexeme();
 		}
 		else {
-			mistake("already declared : " + lexeme);
+			if (!isAlreadyDeclared) {
+				variables.insert(lexeme);
+				n.addSon(lexeme);
+				n.getSon(0).tr = lexeme;
+				getLexeme();
+			}
+			else {        
+				mistake("already declared : " + lexeme);
+			}
 		}
 
 		n.tr = n.getSon(0).tr;

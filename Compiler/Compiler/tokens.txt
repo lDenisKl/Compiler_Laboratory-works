@@ -1,14 +1,23 @@
-5 | CONST | 3 
+0 | CONST | 0 
+2 | CONST | 1 
+1 | CONST | 2 
+10 | CONST | 3 
+7 | CONST | 5 
 ; | SEP | 9 
+< | OP | 10 
 = | OP | 11 
 return | KW | 22 
 { | SEP | 23 
 } | SEP | 25 
+for | KW | 27 
 int | KW | 31 
 ( | SEP | 40 
 ) | SEP | 41 
++ | OP | 43 
 , | SEP | 44 
 funcname | ID | 45 
 a | ID | 47 
 b | ID | 48 
+c | ID | 49 
 
+ | MISTAKE

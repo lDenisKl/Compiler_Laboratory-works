@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\sourceCode.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Compiler\\sourceCode.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\Parser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexAnal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\LexAnal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|solutionrelative:Compiler\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A693F12-7868-423E-810B-8DA079CFEB4B}|Compiler\\Compiler.vcxproj|C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,37 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "sourceCode.txt",
               "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\sourceCode.txt",
               "RelativeDocumentMoniker": "Compiler\\sourceCode.txt",
               "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\sourceCode.txt",
               "RelativeToolTip": "Compiler\\sourceCode.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-12-23T20:40:52.095Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Parser.h",
-              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.h",
-              "RelativeDocumentMoniker": "Compiler\\Parser.h",
-              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.h",
-              "RelativeToolTip": "Compiler\\Parser.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-28T10:00:10.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Node.h",
               "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Node.h",
               "RelativeDocumentMoniker": "Compiler\\Node.h",
@@ -73,20 +60,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Parser.h",
+              "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.h",
+              "RelativeDocumentMoniker": "Compiler\\Parser.h",
+              "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.h",
+              "RelativeToolTip": "Compiler\\Parser.h",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-28T10:00:10.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Parser.cpp",
               "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.cpp",
               "RelativeDocumentMoniker": "Compiler\\Parser.cpp",
               "ToolTip": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\Parser.cpp",
               "RelativeToolTip": "Compiler\\Parser.cpp",
-              "ViewState": "AQIAAFsBAAAAAAAAAAAcwG8BAAAwAAAA",
+              "ViewState": "AQIAAFMBAAAAAAAAAAAAAGMBAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-26T15:31:39.431Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "LexAnal.cpp",
               "DocumentMoniker": "C:\\Users\\l_DK_l\\Documents\\GitHub\\Compiler_Laboratory-works\\Compiler\\Compiler\\LexAnal.cpp",
               "RelativeDocumentMoniker": "Compiler\\LexAnal.cpp",

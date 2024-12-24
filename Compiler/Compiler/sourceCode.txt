@@ -1,5 +1,11 @@
 int funcname ( ) {
-int a , b ;
-a = 5 ;
-return b ;
+int a , b , c ;
+a = c + ( a + b ) ;
+for ( a = 0 ; a < 7 ; a + 2 ) {
+b = b + 1 ;
+for ( b = b ; b < 10 ; b + 1 ) { 
+c = c + 2 ;
+}
+}
+return c ;
 }

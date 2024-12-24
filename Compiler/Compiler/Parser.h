@@ -12,6 +12,7 @@ private:
 	set<string> variables;
 	vector<token> ls;
 	int i;
+	int metkaCurrent=1;
 	bool isNumber(string s);
 	bool isName(string s);
 	void getLexeme();
@@ -33,7 +34,7 @@ private:
 	void SimpleExpr(Node& n);
 	void Condition(Node& n);
 	void RelationOperations(Node& n);
-	void Id(Node& n);
+	void Id(Node& n, bool isFromDeclaration = false);
 	void Const(Node& n);
 
 public:
